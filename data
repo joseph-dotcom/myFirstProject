@@ -1,0 +1,20 @@
+import random
+num=[0,0,0,0,0,0,0,0]
+cities=["nakuru","Mombasa","Nairobi","Kisumu","Eldoret","Machakos",
+        "Narok","Njoro","Meru","Malindi","Nanyuki","Marsabit",
+        "Lodwar","Kericho","Kisii","Nyeri","Molo","Nyahururu"]
+handle=open(r"/home/jose/Desktop/data44.csv","w")
+gender=["MALE","FEMALE"]
+print("CITY,PHONE,SALARY,EMPLOYEE_NUMBER,GENDER,WORK_STATUS,AGE")
+for y in range(100000):
+    employee_num=("A"+random.choice("abcdefghijklmnopqrstuvwxyz")+random.choice("abcdefghijklmnopqrstuvwxyz")+str(random.randint(1000,9999)))
+    salary=random.randint(10000,100000)
+    age=random.randint(20,65)
+    status_gender=random.choice(gender)
+    status_white_color_job=str(random.randint(0,1))
+    for x in range(8):
+        num[x]=random.randint(0,9)
+        phone="07"+str(num[0])+str(num[1])+str(num[2])+str(num[3])+str(num[4])+str(num[5])+str(num[6])+str(num[7])
+    handle.write(random.choice(cities)+","+phone+","+str(salary)+","+employee_num+","+status_gender+","+status_white_color_job+","+str(age)+"\n")
+#     print (random.choice(cities)+","+str(phone)+","+str(salary)+","+employee_num+","+status_gender+","+status_white_color_job+","+str(age))
+handle.close()
